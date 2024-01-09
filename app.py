@@ -1,9 +1,11 @@
 from flask import Flask
+from flask_cors import CORS, cross_origin
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 import base64
 
 app = Flask(__name__)
+CORS(app)
 
 @app.get('/')
 def index():
